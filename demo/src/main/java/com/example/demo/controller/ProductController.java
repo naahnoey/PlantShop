@@ -46,17 +46,12 @@ public class ProductController {
 	@GetMapping("/{ptype}")
 	public ResponseEntity<List<Product>> productList(@PathVariable("ptype") String ptype) {
 		try {
-			String dbPtype = "";
 			List<Product> products = new ArrayList<Product>();
 			
 			if (ptype.equals("all"))
 				productRepository.findAll().forEach(products::add);
 			else {
-				if (ptype.equals("pot"))	dbPtype = "화분식물";
-				if (ptype.equals("air"))	dbPtype = "공중식물";
-				if (ptype.equals("succulent"))	dbPtype = "다육식물";
-				if (ptype.equals("other"))	dbPtype = "기타상품";
-				productRepository.findByPtype(dbPtype).forEach(products::add);
+				productRepository.findByPtype(ptype).forEach(products::add);
 			}
 			
 			if(products.isEmpty())
