@@ -14,12 +14,12 @@
             About
           </router-link>
         </li>
-        <li class="nav-item" @click="refreshList()">
+        <li class="nav-item">
           <router-link to="/product/pot" style="color: rgb(64, 64, 64)" class="nav-link">
             화분식물
           </router-link>
         </li>
-        <li class="nav-item" @click="refreshList()">
+        <li class="nav-item">
           <router-link to="/product/air" style="color: rgb(64, 64, 64)" class="nav-link">
             공중식물
           </router-link>
