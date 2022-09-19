@@ -51,7 +51,7 @@ export default {
             this.ptype = this.$route.params.ptype;
 
             // 상품 목록
-            ProductDataService.getAll(this.$route.params.ptype)
+            ProductDataService.getAllAdmin()
             .then(response => {
                 this.products = response.data;
                 console.log(response.data);
